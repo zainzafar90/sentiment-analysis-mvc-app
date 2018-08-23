@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2.7.9
 
 from flask import Flask
 
@@ -14,3 +14,7 @@ def create_app(config):
     app.add_url_rule('/search', view_func=by_query)
 
     return app
+
+if __name__ == "__main__":
+    app = create_app('config.DevelopmentConfig')
+    app.run()
