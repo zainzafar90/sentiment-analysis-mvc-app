@@ -1,3 +1,39 @@
-{% extends "base.html" %}
+<!doctype html>
+<html class="no-js" lang="">
 
-<!-- {% block title %}Index{% endblock %} -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> Twitter Sentiment Analysis - {% block title %} {% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../static/css/skeleton.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 class="title">Twitter Sentiment Analysis</h2>
+        <form action="/search" method="GET">
+            <div class="row">
+                <div class="nine columns">
+                    <!--Twitter Search OPERATORS: https://developer.twitter.com/en/docs/tweets/search/guides/standard-operators -->
+                    <input name="query" placeholder="Search Tweets i.e. #hashtag, @twitter_handler, from:ImranKhanPTI etc" class="u-full-width" type="text">
+                </div>
+                <div class="three columns">
+                    <input class="button-primary u-full-width" type="submit" value="Search">
+                </div>
+            </div>
+        </form>
+
+        <article>
+            {% block content %} {% endblock %}
+        </article>
+
+    </div>
+    <!-- #container -->
+</body>
+
+</html>

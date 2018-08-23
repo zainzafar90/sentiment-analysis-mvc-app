@@ -8,12 +8,21 @@ body {
     margin: 50px auto;
 }
 
+.title {
+    text-align: center;
+    font-weight: bold;
+    color: #fefefe;
+    background: #256a7d;
+    padding: 10px;
+    border-radius: 5px;
+}
 
 /*************************************
 /*************************************
               TWEET CARD  
 **************************************
 *************************************/
+
 a {
     text-decoration: none;
 }
