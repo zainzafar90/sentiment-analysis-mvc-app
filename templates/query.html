@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block title %}Index{% endblock %} {% block content %}
+
+<div class="row">
+    <div class="twelve columns">
+
+        {% for tweet in tweets %}
+        <blockquote class="tweet">
+            <div class="tweet-header">
+                <a class="tweet-avatar" href="https://twitter.com/gabromanato">
+                    <img class="avatar" src="{{tweet.profile_image_url}}">
+                </a>
+                <div class="tweet-author">
+                    <a class="tweet-author" href="https://twitter.com/{{tweet.screen_name}}" target="_blank">
+                        <div class="tweet-author__screen-name-container">
+                            <div class="tweet-author__decorated-name">
+                                <span class="tweet-author__name">{{tweet.name}}</span>
+                            </div>
+                            <div class="tweet-author__screen-name" title="@{{tweet.screen_name}}">@{{tweet.screen_name}}</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="tweet-icon">
+                    {% if tweet.sentiment == -1 %}  <i class="em em-smiley"></i> {% endif %}
+                    {% if tweet.sentiment == 0 %}  <i class="em em-neutral_face"></i> {% endif %}
+                    {% if tweet.sentiment == 1 %}  <i class="em em-angry"></i> {% endif %}
+                   
+                </div>
+            </div>
+            <div class="tweet-body">
+                <p class="tweet-text m-0">{{tweet.text}}</p>
+            </div>
+            <div class="tweet-metadata">
+                <span>
+                    <time class="dt-updated" title="Time posted: December 03, 2012 18:51:11 (UTC)">{{tweet.date}}</time>
+                </span>
+            </div>
+        </blockquote>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
