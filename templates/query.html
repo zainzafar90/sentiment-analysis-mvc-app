@@ -1,6 +1,4 @@
-{% extends "index.html" %}
-
-{% block content %}
+{% extends "index.html" %} {% block content %}
 
 <div class="row">
     <div class="twelve columns">
@@ -23,10 +21,9 @@
                 </div>
 
                 <div class="tweet-icon">
-                    {% if tweet.sentiment == -1 %}  <i class="em em-smiley"></i> {% endif %}
-                    {% if tweet.sentiment == 0 %}  <i class="em em-neutral_face"></i> {% endif %}
-                    {% if tweet.sentiment == 1 %}  <i class="em em-angry"></i> {% endif %}
-                   
+                    {% if tweet.sentiment == 1 %} <i class="em em-smiley"></i> {% endif %} 
+                    {% if tweet.sentiment == 0 %} <i class="em em-neutral_face"></i> {% endif %} 
+                    {% if tweet.sentiment == -1 %}<i class="em em-angry"></i> {% endif %}
                 </div>
             </div>
             <div class="tweet-body">

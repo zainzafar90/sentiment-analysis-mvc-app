@@ -29,6 +29,8 @@ class TweetAnalyzer():
     def tweets_to_data_frame(self, tweets):
         df = pd.DataFrame(data=[tweet.full_text for tweet in tweets], columns=['tweets'])
 
+        # print tweets[0].entities['urls'][0]['expanded_url']
+
         df['id'] = np.array([tweet.id for tweet in tweets])
         df['full_text'] = np.array([tweet.full_text for tweet in tweets])
         df['name'] = np.array([tweet.user.name for tweet in tweets])
