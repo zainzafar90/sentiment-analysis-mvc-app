@@ -120,7 +120,7 @@ a {
 }
 
 .em-smiley {
-    background-image: url(../img/emojis/smiley.png);
+    background-image: url(../img/emojis/innocent.png);
 }
 
 .em-neutral_face {
@@ -128,5 +128,5 @@ a {
 }
 
 .em-angry {
-    background-image: url(../img/emojis/angry.png);
+    background-image: url(../img/emojis/rage.png);
 }
