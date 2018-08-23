@@ -19,6 +19,6 @@ class TwitterClient():
 
     def get_tweets(self, query, num_tweets):
         tweets = []
-        for tweet in Cursor(self.twitter_client.search, q=str(query)).items(num_tweets):
+        for tweet in Cursor(self.twitter_client.search, q=str(query), tweet_mode="extended").items(num_tweets):
             tweets.append(tweet)
         return tweets

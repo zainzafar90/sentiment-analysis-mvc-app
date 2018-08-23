@@ -27,15 +27,14 @@ class TweetAnalyzer():
             return -1
     
     def tweets_to_data_frame(self, tweets):
-        df = pd.DataFrame(data=[tweet.text for tweet in tweets], columns=['tweets'])
+        df = pd.DataFrame(data=[tweet.full_text for tweet in tweets], columns=['tweets'])
 
         df['id'] = np.array([tweet.id for tweet in tweets])
-        df['text'] = np.array([tweet.text for tweet in tweets])
-        print df['text']
+        df['full_text'] = np.array([tweet.full_text for tweet in tweets])
         df['name'] = np.array([tweet.user.name for tweet in tweets])
         df['screen_name'] = np.array([tweet.user.screen_name for tweet in tweets])
         df['profile_image_url'] = np.array([tweet.user.profile_image_url for tweet in tweets])
-        df['len'] = np.array([len(tweet.text) for tweet in tweets])
+        df['len'] = np.array([len(tweet.full_text) for tweet in tweets])
         df['date'] = np.array([self.get_formatted_date_time(tweet.created_at) for tweet in tweets])
         df['source'] = np.array([tweet.source for tweet in tweets])
         df['likes'] = np.array([tweet.favorite_count for tweet in tweets])
