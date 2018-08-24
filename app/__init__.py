@@ -14,7 +14,3 @@ def create_app(config):
     app.add_url_rule('/search', view_func=by_query)
 
     return app
-
-if __name__ == "__main__":
-    app = create_app('config.ProductionConfig')
-    app.run()
